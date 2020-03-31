@@ -1,0 +1,44 @@
+.main{
+   width: 322px;
+   height: 301px; 
+   /* display:inline-flexbox; */
+   border: 2px solid rgb(218, 36, 36);
+   box-sizing: border-box;
+}
+
+.box{
+    font-size: 60px;
+    height: 95px;
+    width: 102px;
+    border: 2px solid rgb(197, 43, 43);
+    float: left;
+    /* display: flex; */
+    margin: 0px;
+}
+
+.container{
+    font-size: 50px;
+    text-align: center;
+}
+
+.tictactoe{
+    text-align: center;
+    height: 800px;
+    margin:50px 60px 50px 60px;
+    display: inline-block;
+}
+
+button{
+    height: 50px;
+    width: 100px;
+    margin: 20px 113px;
+    border:2px solid black;
+}
+
+.result{
+    font-size:25px;
+    height: 40px;
+    width: 302px;
+    border: 1px solid black;
+    margin: 8px 5px 13px 8px;
+}
