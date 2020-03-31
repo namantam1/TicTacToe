@@ -97,16 +97,6 @@ function computerFill(){
                 break;
             }
         }
-        while(1){
-            let i=Math.floor(Math.random()*100)%9;
-            console.log(i);
-            if(array[i]==""&array[i]!='o'){
-                // valueBox[i].innerText = 'x';
-                // array[i] = 'x';
-                console.log("after computer fill",array,i);
-                break;
-            }
-        }
     }
     return (comWinStatus);
 }
