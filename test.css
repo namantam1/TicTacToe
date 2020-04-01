@@ -1,44 +1,102 @@
-.main{
-   width: 322px;
-   height: 301px; 
-   /* display:inline-flexbox; */
-   border: 2px solid rgb(218, 36, 36);
-   box-sizing: border-box;
+
+*{
+    padding: 0;
+    margin: 0;
 }
 
-.box{
-    font-size: 60px;
-    height: 95px;
-    width: 102px;
-    border: 2px solid rgb(197, 43, 43);
-    float: left;
-    /* display: flex; */
-    margin: 0px;
+.navbar{
+    display: flex;
+    color: aliceblue;
+    background-color: rgba(25, 100, 19, 0.596);
+    
 }
 
-.container{
-    font-size: 50px;
-    text-align: center;
+.heading{
+    font-size: 30px;
+    margin-top: 8px;
+    font-family: cursive;
+}
+
+.icon{
+    margin:5px;
+}
+
+.icon img{
+    height: 40px;
+}
+
+.mode{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.mode select{
+    width: 70px;
+    border-radius: 3px;
+}
+
+body{
+    background-image: url('bg4.jpg');
+    /* background-size: cover; */
 }
 
 .tictactoe{
+    color: aliceblue;
+    /* justify-content: center; */
+}
+
+.box{
+    height: 110px;
+    width: 110px;
+    border: 1.5px solid rgb(224, 195, 182);
+    font-family: 'Indie Flower', cursive;
+    line-height: 100px;
+    /* justify-content: center; */
+}
+
+.main{
+    margin-left: 10px;
+    margin-top: 20px;
+    font-size: 90px;
     text-align: center;
-    height: 800px;
-    margin:50px 60px 50px 60px;
     display: inline-block;
 }
 
-button{
-    height: 50px;
-    width: 100px;
-    margin: 20px 113px;
-    border:2px solid black;
+.main .row{
+    display: flex;
+}
+
+.winChart{
+    display: inline-flex;
+    border: 1px solid white;
+    margin: 10px 10px 0px 10px;
+    height: 25px;
+    line-height: 23px;
+    /* margin-top: 20px; */
+    /* padding: px; */
+    background-color: rgba(66, 53, 53, 0.692);
+}
+
+.winChart p{
+    padding-left: 5px;
+    padding-right: 5px;
+    border-left: 1px solid white;
 }
 
 .result{
-    font-size:25px;
-    height: 40px;
-    width: 302px;
-    border: 1px solid black;
-    margin: 8px 5px 13px 8px;
+    /* display: inline; */
+    margin: 5px 10px 0px 10px;
+    border: 1px solid white;
+    text-align: center;
+}
+
+button{
+    border-radius: 2px;
+    border: none;
+    background-color: rgb(164, 175, 139);
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Righteous', cursive;
+    margin-left: 120px;
+    margin-top: 10px;
 }
