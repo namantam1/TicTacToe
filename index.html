@@ -19,21 +19,22 @@
             <p>TICTACTOE</p>
         </div>
         <div class="mode">
-            <label for="mode">Mode:</label>
-            <select name="playMode" id="mode">
-                <option value="easy">Easy</option>
-                <option value="medium" selected>Medium</option>
-                <option value="impossible">Impossible</option>
-                <option value="friend">Play against a friend</option>
-            </select>
+            <label for="mode">Mode:
+                <select name="playMode" id="mode">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="impossible">Impossible</option>
+                    <option value="friend">Play against a friend</option>
+                </select>
+            </label>
         </div>
     </div>
     <div class="tictactoe">
-        <div class="game">
-            <div class="main">
+        <div class="gamebox">
+            <div class="square">
                 <div class="row">
-                    <div class="box" id="0">o</div>
-                    <div class="box" id="1">x</div>
+                    <div class="box" id="0"></div>
+                    <div class="box" id="1"></div>
                     <div class="box" id="2"></div>
                 </div>
                 <div class="row">
@@ -47,16 +48,58 @@
                     <div class="box" id="8"></div>
                 </div>
             </div>
-            <div class="winChart">
-                <p>you win = <span>0</span></p>
-                <p>Com win = <span>0</span></p>
-                <p>Draw Match = <span>0</span></p>
+            <div class="choosedisplay">
+                <p>You want to play with:</p>
+                <label><input type="radio" name="g" id="o" checked>o</label>
+                <br>
+                <label><input type="radio" name="g" id="x">x</label>
             </div>
         </div>
-        <div class="result">you will play with "o" i mk nn nhhj kugbj </div>
-        <button>Reset Game</button>
+        <div class="popdisplay">
+            <p>Congratulation You have won</p>
+            <button>ok</button>
+        </div>
     </div>
-
+    <br>
+    <hr>
+    <div class="displayresult">
+        <div class="disresult">You won : <p>0</p>
+        </div>
+        <div class="disresult">Computer won : <p>0</p>
+        </div>
+        <div class="disresult">Draw match : <p>0</p>
+        </div>
+    </div>
+    <button class="Rbtn">Reset Game</button>
+    <footer>
+        <div class="contacticon">
+            <div class="facebook">
+                <a href="https://www.facebook.com/namantam1"><img
+                        src="https://img.icons8.com/material/60/000000/facebook-new.png" />
+                    <p>facebook</p>
+                </a>
+            </div>
+            <div class="insta">
+                <a href="https://www.instagram.com/namantamrakar1/"><img
+                        src="https://img.icons8.com/material/60/000000/instagram-new--v1.png" />
+                    <p>Instagram</p>
+                </a>
+            </div>
+            <div class="gmail">
+                <a href="https://namantam1@gmail.com"><img
+                        src="https://img.icons8.com/material/60/000000/gmail--v1.png" />
+                    <p>Gmail</p>
+                </a>
+            </div>
+        </div>
+        <div class="counter">
+            <p class="counterpara">No. of visits <span>:</span></p>
+            <a href="https://www.freecounterstat.com" title="visitor counter widget"><img class="counterimg"
+                    src="https://counter9.stat.ovh/private/freecounterstat.php?c=p3r24xummzkxsdlr3sjr1zkq6j2sgghh"
+                    border="0" title="visitor counter widget" alt="visitor counter widget"></a>
+        </div>
+        <div class="copyright">Copyright &copy NamanGames</div>
+    </footer>
     <script src="test.js"></script>
 </body>
 
