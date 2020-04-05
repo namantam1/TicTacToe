@@ -135,47 +135,83 @@ function updateScreen(message) {
 // console.log(valueBox)
 // console.log(Array.from(valueBox))
 
-//------------->>medum level 
-function mediumgame() {
-    // console.log("after computer fill",array);
-    let userStatus = userFill(event.target);
-    let comStatus = false;
-    // console.log(userStatus);
-    if (userStatus == false) {
-        comStatus = computerFill();
-    }
-    // console.log(comStatus)
-    if (comStatus == false & userStatus == false) {
-        let k = 0;
-        array.forEach(function (ele) {
-            if (ele != "")
-                k++;
-        })
-        if (k == 9) {
-            console.log(k);
-            updateScreen('Game draw');
-            draw = draw + 1;
+//------------->>medum level
+
+
+function mediumgame(event) {
+    let ele = event.target;
+    console.log("medium");
+    // let validSatatus=false;
+    // console.log(checkIfValid(ele.id))
+    if (checkIfValid(ele.id)) {
+        array[ele.id] = 'o';
+        ele.innerText = o;
+        validSatatus = true;
+        // console.log("before win check" , array);
+        // console.log(checkIfWin(array));
+        if (array[checkIfWin(array)] == 'o') {
+            updateScreen("you have won");
+            p1 = p1 + 1;
             restart();
+            return;
         }
+    }
+    else return;
+    if (midComFill()) {  // impoComfill always true
+        if (array[checkIfWin(array)] == 'x') {
+            updateScreen("computer have won");
+            p2 = p2 + 1;
+            restart();
+            return;
+        }
+    }
+    else return;
+    let i = 0;
+    for (i = 0; i < 9; i++) {
+        if (array[i] == "")
+            break;
+    }
+    if (i == 9) {
+        updateScreen("game draw");
+        draw = draw + 1;
+        restart();
+        return;
     }
 }
 
-function userFill(element) {
-    // checkIfValid(array,element.id);
-    array[Number(element.id)] = 'o';
-    element.innerText = o;
-    console.log("after user fill", array);
-    let userStatus = checkIfWin(array);
-    if (array[userStatus] == 'o') {
-        updateScreen("you have won");
-        p1 = p1 + 1;
-        restart();
+
+function midComFill() {
+    if (array[4] == "") {
+        array[4] = 'x';
+        valueBox[4].innerText = x;
         return true;
     }
-    else {
-        return false;
+    let temp = comWinStatus(array);
+    if (temp >= 0 && temp < 9) {
+        array[temp] = 'x';
+        valueBox[temp].innerText = x;
+        return true;
     }
+    temp = userStatus(array)
+    if (temp >= 0 && temp < 9) {
+        array[temp] = 'x';
+        valueBox[temp].innerText = x;
+        return true;
+    }
+    let i = 0;
+    console.log(i,"medium lst");
+        for (i = 0; i < 9; i ++) {
+            if (array[i] == "") {
+                array[i] = 'x';
+                valueBox[i].innerText = x;
+                return true;
+            }
+        }
+    return true;
 }
+
+
+// common function
 
 function checkIfWin(array) {
     if (array[0] == array[1] & array[1] == array[2] & array[2] != "") return 2;
@@ -189,53 +225,6 @@ function checkIfWin(array) {
     else return 9;
 }
 
-
-function computerFill() {
-    let comWinStatus = checkIfComputerCanWin();
-    let userWinStaus;
-    if (comWinStatus == false) {
-        userWinStaus = checkIfUserIsAboutToWin();
-    }
-    // console.log(status)
-    if (comWinStatus == false & userWinStaus == false) {
-        for (i = 0; i < 9; i++) {
-            if (array[i] == "" & array[i] != 'o') {
-                valueBox[i].innerText = x;
-                array[i] = 'x';
-                console.log("after computer fill", array);
-                break;
-            }
-        }
-        // while(1){
-        //     let i=Math.floor(Math.random()*100)%9;
-        //     console.log(i);
-        //     if(array[i]==""&array[i]!='o'){
-        //         // valueBox[i].innerText = 'x';
-        //         // array[i] = 'x';
-        //         console.log("after computer fill",array,i);
-        //         break;
-        //     }
-        // }
-    }
-    return (comWinStatus);
-}
-
-function checkIfComputerCanWin() {
-    let comStatus = comWinStatus();
-    // console.log(status)
-    if (comStatus >= 0 & comStatus < 9) {
-        array[comStatus] = 'x';
-        valueBox[comStatus].innerText = x;
-        updateScreen('computer have won');
-        p2 = p2 + 1;
-        restart();
-        return true;      //To be write a reset function
-        // console.log("after computer fill win",array);
-    }
-    else {
-        return false;
-    }
-}
 
 function comWinStatus() {
     if (array[0] == array[1] & array[1] == "x" & array[2] == "") return 2;
