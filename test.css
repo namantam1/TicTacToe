@@ -2,6 +2,7 @@
 *{
     padding: 0;
     margin: 0;
+    user-select: none;
 }
 
 .navbar{
@@ -26,77 +27,174 @@
 }
 
 .mode{
-    margin-top: 20px;
-    margin-left: 30px;
+    margin:20px auto;
 }
 
 .mode select{
     width: 70px;
     border-radius: 3px;
+    border: none;
+    cursor: pointer;
 }
 
 body{
-    background-image: url('https://github.com/namantam1/TicTacToe/blob/master/bg4.jpg?raw=true');
-    /* background-size: cover; */
+    background-image: url('bg.jpg');
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+/* Game */
+.gamebox{
+    display: flex;
+    /* justify-content: center; */
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.square{
+    display: flex;
+}
+
+.box{
+    border: 1px solid white;
+    height: 20vw;
+    width: 20vw;
+    font-family: 'Indie Flower', cursive;
+    font-size: 20vw;
+    text-align: center;
+    line-height: 15vw;
+    cursor: pointer;
 }
 
 .tictactoe{
     color: aliceblue;
-    /* justify-content: center; */
 }
 
-.box{
-    height: 110px;
-    width: 110px;
-    border: 1.5px solid rgb(224, 195, 182);
-    font-family: 'Indie Flower', cursive;
-    line-height: 100px;
-    /* justify-content: center; */
-}
-
-.main{
+.choosedisplay{
     margin-left: 10px;
-    margin-top: 20px;
-    font-size: 90px;
-    text-align: center;
-    display: inline-block;
+    font-family: 'Indie Flower', cursive;
+    /* display: flex; */
 }
 
-.main .row{
+.choosedisplay input{
+    margin-right: 10px;
+}
+
+.choosedisplay label{
+    font-size: 10vw;
+}
+
+.choosedisplay p{
+    font-size: 20px;
+}
+
+.displayresult div{
+    color: aliceblue;
     display: flex;
+    margin: 10px;
 }
 
-.winChart{
-    display: inline-flex;
-    border: 1px solid white;
-    margin: 10px 10px 0px 10px;
-    height: 25px;
-    line-height: 23px;
-    /* margin-top: 20px; */
-    /* padding: px; */
-    background-color: rgba(66, 53, 53, 0.692);
+.displayresult p{
+    margin-left: 10px;
 }
 
-.winChart p{
-    padding-left: 5px;
-    padding-right: 5px;
-    border-left: 1px solid white;
-}
-
-.result{
-    /* display: inline; */
-    margin: 5px 10px 0px 10px;
-    border: 1px solid white;
-    text-align: center;
-}
-
-button{
+.Rbtn{
     border-radius: 2px;
     border: none;
     background-color: rgb(164, 175, 139);
     font-size: 20px;
     text-align: center;
     font-family: 'Righteous', cursive;
-    margin-left: 120px;
-    margin-top: 10px;
+    margin: 20px auto;
+    display: block;
+    padding: 5px;
+    box-shadow: 0 5px #746f2f;
+}
+
+.Rbtn:active {
+    position: relative;
+    top: 5px;
+    box-shadow: none;
+}
+
+  
+.popdisplay{
+    border-radius: 5px;
+    background-color: rgba(250, 235, 215, 0.952);
+    color: brown;
+    border: 1px solid red;
+    width: 50vw;
+    position: absolute;
+    top: 40vw;
+    left: 25vw;
+    text-align: center;
+    padding: 10px;
+    /* display: none; */
+    visibility: hidden;
+    /* visibility: visible; */
+}
+    
+.popdisplay button{
+    font-size: 20px;
+    width: 10vw;
+    /* height: 3vw; */
+    line-height:auto;
+    background-color:rgb(124, 154, 155);
+    border: none;
+    border-radius: 3px;
+    margin-top: 5px;
+    padding: 2px;
+}
+
+footer{
+    background-color: rgba(102, 110, 108, 0.596);
+    margin-top: 50px;
+    /* display: flex; */
+    justify-content: space-between;
+}
+
+.contacticon{
+    display:flex;
+    justify-content: space-around;
+    padding: 20px 0px 15px 0;
+}
+
+a{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    opacity: .8;
+ }
+
+ a:hover{
+    opacity: 1;
+ }
+
+.counter{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    padding: 15px 0px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+}
+.counterpara{
+    margin-right: 5px;
+    /* text-decoration: underline; */
+}
+
+.counterimg{
+    height: 20px;
+    width: 70px;
+    padding-top: 6px;
+}
+.copyright{
+    padding: 5px;
+    text-align: center;
 }
