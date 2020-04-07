@@ -41,9 +41,9 @@ for (i = 0; i < 2; i++) {
             o = 'x';
             x = 'o';
         }
-        console.log(o, x);
+        // console.log(o, x);
     })
-    console.log(o, x);
+    // console.log(o, x);
 }
 
 //--------->>> reset values
@@ -85,7 +85,7 @@ mode.addEventListener("change", function () {
         player1.innerHTML = "You won : <p>0</p>"
         player2.innerHTML = "Computer won : <p>0</p>"
     }
-    console.log("modechanged")
+    // console.log("modechanged")
     resetValue(0, 0, 0);
     // else game(modevalue);
 })
@@ -116,7 +116,7 @@ valueBox.forEach(function (element) {
 
 function restart() {
     setTimeout(function () {
-        console.log(resultAlertPop.style.visibility = "visible");
+        resultAlertPop.style.visibility = "visible";
         resultButton.addEventListener("click", function () {
             resultAlertPop.style.visibility = "hidden";
             resetValue(p1, p2, draw);
@@ -135,12 +135,10 @@ function updateScreen(message) {
 // console.log(valueBox)
 // console.log(Array.from(valueBox))
 
-//------------->>medum level
-
-
+//------------->>medum level 
 function mediumgame(event) {
     let ele = event.target;
-    console.log("medium");
+    // console.log("medium");
     // let validSatatus=false;
     // console.log(checkIfValid(ele.id))
     if (checkIfValid(ele.id)) {
@@ -181,11 +179,11 @@ function mediumgame(event) {
 
 
 function midComFill() {
-    if (array[4] == "") {
-        array[4] = 'x';
-        valueBox[4].innerText = x;
-        return true;
-    }
+    // if (array[4] == "") {
+    //     array[4] = 'x';
+    //     valueBox[4].innerText = x;
+    //     return true;
+    // }
     let temp = comWinStatus(array);
     if (temp >= 0 && temp < 9) {
         array[temp] = 'x';
@@ -199,19 +197,19 @@ function midComFill() {
         return true;
     }
     let i = 0;
-    console.log(i,"medium lst");
-        for (i = 0; i < 9; i ++) {
-            if (array[i] == "") {
-                array[i] = 'x';
-                valueBox[i].innerText = x;
-                return true;
-            }
+    // console.log(i, "medium lst");
+    let randumvalue = randomNumber();
+    for (i = 0; i < 9; i++) {
+        if (array[randumvalue[i]] == "") {
+            array[randumvalue[i]] = 'x';
+            valueBox[randumvalue[i]].innerText = x;
+            return true;
         }
+    }
     return true;
 }
 
-
-// common function
+// common logic
 
 function checkIfWin(array) {
     if (array[0] == array[1] & array[1] == array[2] & array[2] != "") return 2;
@@ -224,7 +222,6 @@ function checkIfWin(array) {
     else if (array[2] == array[4] & array[4] == array[6] & array[6] != "") return 6;
     else return 9;
 }
-
 
 function comWinStatus() {
     if (array[0] == array[1] & array[1] == "x" & array[2] == "") return 2;
@@ -300,7 +297,7 @@ function userStatus() {
 
 function easygame(event) {
     let ele = event.target;
-    console.log("easy");
+    // console.log("easy");
     let validSatatus = false;
     // console.log(checkIfValid(ele.id))
     if (checkIfValid(ele.id)) {
@@ -348,13 +345,15 @@ function checkIfValid(index) {
     else return false;
 }
 
+
 function easyComputerFill() {
     // console.log("computer fills")
     // console.log("before fill",array)
-    for (i = 0; i < 8; i++) {
-        if (array[i] == "") {
-            array[i] = 'x';
-            valueBox[i].innerText = x;
+    let randumvalue = randomNumber();
+    for (i = 0; i < 9; i++) {
+        if (array[randumvalue[i]] == "") {
+            array[randumvalue[i]] = 'x';
+            valueBox[randumvalue[i]].innerText = x;
             break;
         }
     }
@@ -366,7 +365,7 @@ function easyComputerFill() {
 
 function impossiblegame(event) {
     let ele = event.target;
-    console.log("impossible");
+    // console.log("impossible");
     // let validSatatus=false;
     // console.log(checkIfValid(ele.id))
     if (checkIfValid(ele.id)) {
@@ -405,12 +404,29 @@ function impossiblegame(event) {
     }
 }
 
-
 function impoComFill() {
     if (array[4] == "") {
         array[4] = 'x';
         valueBox[4].innerText = x;
         return true;
+    }
+    let i=0;
+    for(i=0;i<9;i++){
+        if(i==4)
+        continue;
+        if(array[i]!="")
+        break;
+    }
+    if(i==9){
+        let rand = 4;
+        while (rand == 4) {
+            let rand = (Math.floor(Math.random() * 100) % 5) * 2;
+            if (rand != 4) {
+                array[rand] = 'x';
+                valueBox[rand].innerText = x;
+                return true;
+            }
+        }
     }
     let temp = comWinStatus(array);
     if (temp >= 0 && temp < 9) {
@@ -424,40 +440,56 @@ function impoComFill() {
         valueBox[temp].innerText = x;
         return true;
     }
-    let i = 0;
+    randumvalue = randomNumber();
     for (i = 0; i < 9; i++) {
-        if (array[i] == "") {
-            array[i] = 'x';
+        // console.log(array)
+        if (array[randumvalue[i]] == "") {
+            array[randumvalue[i]] = 'x';
             let z = vusercheck(array);
-            console.log(z, "hello")
+            // console.log(z, "hello")
             if (z) {
-                valueBox[i].innerText = x;
+                valueBox[randumvalue[i]].innerText = x;
                 return true;
             }
-            else array[i] = "";
+            else array[randumvalue[i]] = "";
         }
     }
-    console.log(i);
-    if (i == 9) {
-        for (i = 1; i < 9; i = i + 2) {
-            if (array[i] == "") {
-                array[i] = 'x';
-                valueBox[i].innerText = x;
-                return true;
+    // console.log(array)
+    // console.log("last function")
+    randumvalue = randomNumber();
+    for (i = 0; i < 9; i++) {
+        if (array[randumvalue[i]] == "") {
+            array[randumvalue[i]] = 'x';
+            let y = comWinStatus(array);
+            // console.log(y);
+            if (y < 9) {
+                array[y] = 'o';
+                // console.log(vUserCheckWin(array))
+                if(vUserCheckWin(array)<2){
+                    array[y] = "";
+                    valueBox[randumvalue[i]].innerText = x;
+                    // console.log(array);
+                    return true;
+                }
+                else{
+                    array[randumvalue[i]] = "";
+                    array[y] = "";
+                }
             }
+            else array[randumvalue[i]] = "";
         }
     }
     return true;
 }
-
+// vusercheck1 se ham chahte hai ki wh batai ki kaha uder ka 1 ya 0 banega
 function vusercheck(array) {
-    console.log("vuser")
+    // console.log("vuser")
     // const temp = array;
     let i = 0;
     for (i = 0; i < 9; i++) {
         if (array[i] == "") {
             array[i] = 'o';
-            console.log(array, vUserCheckWin(array))
+            // console.log(array, vUserCheckWin(array))
             if (vUserCheckWin(array) >= 2) {
                 array[i] = "";
                 return false;
@@ -494,15 +526,14 @@ function vUserCheckWin(array) {
     if (array[2] == 'o' && array[4] == 'o' && array[6] == "") blank++;
     if (array[4] == 'o' && array[6] == 'o' && array[2] == "") blank++;
     if (array[2] == 'o' && array[6] == 'o' && array[4] == "") blank++;
-    blank++;
     return blank;
 }
 
-//-------->> play with friend
+//-------->> play with a friend
 
 function playwithfriend(event) {
     let ele = event.target;
-    console.log("friend");
+    // console.log("friend");
     let validSatatus = false;
     // console.log(checkIfValid(ele.id))
     if (checkIfValid(ele.id) && k % 2 == 0) {
@@ -549,4 +580,18 @@ function playwithfriend(event) {
         }
         return;
     }
+}
+
+function randomNumber(){
+let randomarray = ['','','','','','','','',''];
+let number = ['0','1','2','3','4','5','6','7','8']
+let t=0;
+while(t<9){
+    let rand = Math.floor(Math.random()*100)%9;
+    if(randomarray[rand]==""){
+        randomarray[rand] = number[t];
+        t = t+1;
+    }
+}
+return randomarray;
 }
