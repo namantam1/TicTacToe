@@ -1,0 +1,247 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}
+
+.navbar{
+    display: flex;
+    color: aliceblue;
+    background-color: rgba(25, 100, 19, 0.596);
+    
+}
+
+.heading{
+    font-size: 30px;
+    margin-top: 8px;
+    font-family: cursive;
+}
+
+.icon{
+    margin:5px;
+}
+
+.icon img{
+    height: 40px;
+}
+
+.mode{
+    margin:20px auto;
+}
+
+.mode select{
+    width: 70px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+}
+
+body{
+    background-color: #746f2f;
+}
+
+/* Game */
+.gamebox{
+    display: flex;
+    /* justify-content: center; */
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.square{
+    display: flex;
+}
+
+.box{
+    border: 1px solid white;
+    height: 4rem;
+    width: 4rem;
+    font-family: 'Indie Flower', cursive;
+    font-size: 5rem;
+    text-align: center;
+    line-height: 3.5rem;
+    cursor: pointer;
+}
+
+.tictactoe{
+    color: aliceblue;
+}
+
+.choosedisplay{
+    margin-left: 10px;
+    font-family: 'Indie Flower', cursive;
+    /* display: flex; */
+}
+
+.choosedisplay input{
+    margin-right: 10px;
+}
+
+.choosedisplay label{
+    font-size: 3rem;
+}
+
+.choosedisplay p{
+    font-size: 20px;
+}
+
+.displayresult div{
+    color: aliceblue;
+    display: flex;
+    margin: 10px;
+}
+
+.displayresult p{
+    margin-left: 10px;
+}
+
+.Rbtn{
+    border-radius: 2px;
+    border: none;
+    background-color: rgb(164, 175, 139);
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Righteous', cursive;
+    margin: 20px auto;
+    display: block;
+    padding: 5px;
+    box-shadow: 0 5px #746f2f;
+}
+
+.Rbtn:active {
+    position: relative;
+    top: 5px;
+    box-shadow: none;
+}
+
+  
+.popdisplay{
+    border-radius: 5px;
+    background-color: rgba(250, 235, 215, 0.952);
+    color: brown;
+    border: 1px solid red;
+    width: 50vw;
+    max-width: 375px;
+    min-height: 60px; /* size */
+    position: fixed;
+    transform: translate(-50%,-50%);
+    top: 40vh;
+    left: 50vw;
+    text-align: center;
+    padding: 10px;
+}
+
+.overlay {
+    position: fixed; /* Positioning and size */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(25, 11, 11, 0.5); /* color */
+    display: none; /* making it hidden by default */
+  }
+
+    
+.popdisplay button{
+    font-size: 20px;
+    width: 60px;
+    /* height: 3vw; */
+    line-height:auto;
+    background-color:rgb(124, 154, 155);
+    border: none;
+    border-radius: 3px;
+    margin-top: 5px;
+    padding: 2px;
+}
+
+footer{
+    background-color: rgba(102, 110, 108, 0.596);
+    margin-top: 50px;
+    justify-content: space-between;
+}
+
+.contacticon{
+    display:flex;
+    justify-content: space-around;
+    padding: 20px 0px 15px 0;
+}
+
+a{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    opacity: .8;
+ }
+
+ a:hover{
+    opacity: 1;
+ }
+
+.counter{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    padding: 15px 0px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+}
+.counterpara{
+    margin-right: 5px;
+    /* text-decoration: underline; */
+}
+
+.counterimg{
+    height: 20px;
+    width: 70px;
+    padding-top: 6px;
+}
+.copyright{
+    padding: 5px;
+    text-align: center;
+}
+
+.container{
+    max-width: 425px;
+    display: block;
+    margin: auto;
+    min-height: 100vh;
+    background-image: url('../images/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+button{
+    outline: none;
+}
+
+@media screen and (min-width:425px){
+    .container{
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+    }
+    .popdisplay{
+        height: 18vh;
+        font-size: 2.5rem;
+    }
+    .popdisplay button{
+        margin-top: 45px;
+        height: 30px;
+    }
+    footer{
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-width: 425px;
+        display: block;
+        margin: auto;
+        position: absolute;
+    }
+}
+
+
+

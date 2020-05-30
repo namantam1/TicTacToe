@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="icon1.png">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Righteous&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="./css/stylesheet.css">
     <title>TicTacToe</title>
 </head>
 
 <body>
+    <div class="container">
     <div class="navbar">
         <div class="icon">
-            <img src="icon1.png" alt="icon">
+            <img src="./images/icon1.png" alt="icon">
         </div>
         <div class="heading">
             <p>TICTACTOE</p>
@@ -55,9 +56,11 @@
                 <label><input type="radio" name="g" id="x">x</label>
             </div>
         </div>
-        <div class="popdisplay">
-            <p>Congratulation You have won</p>
-            <button>ok</button>
+        <div class="overlay">
+            <div class="popdisplay">
+                <p>Congratulation You have won</p>
+                <button>ok</button>
+            </div>
         </div>
     </div>
     <br>
@@ -100,7 +103,8 @@
         </div>
         <div class="copyright">Copyright &copy NamanGames</div>
     </footer>
-    <script src="test.js"></script>
+    </div>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
